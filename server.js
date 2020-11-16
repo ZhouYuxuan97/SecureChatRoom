@@ -40,7 +40,7 @@ app.post('/login', function (req, res) {
 	};
 	console.dir(user);
 	
-	mongoServer.checkUser(user,function(){
+	mongoServer.checkUserByKey(user,function(){
 		//聊天室服务初始化
 		console.log("chatServer load");
 		chatServer.initUser(user);
