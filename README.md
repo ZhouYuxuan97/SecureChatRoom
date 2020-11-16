@@ -11,6 +11,8 @@ C，mongodb数据库：mongodb是一个面向文档的非关系型数据库，�
 
 D，实现和效果：下面要介绍的是使用nodejs实现的即时聊天室，主要用到的是websocket协议，数据库中存放用户民和密码。首先服务器打开一个socket端口3000开始监听客户端的连接，接着客户端浏览器建立socket连接，用户登录时公钥+私钥登录，lib/mongo.js 内有checkUserByKey方法检验公钥私钥是否匹配，用户登录聊天室后会显示离线后未读消息，也可以选择用户并开始发送消息，如果对方在线则使用websocket直接发送消息，如果不在线则加密（TODO）聊天内容存入mongodb数据库historylists表中。
 
+E，密钥对生成：lib/testAES.js 可以使用key.exportKey方法（位于第4、5行）生成。
+
 ###### 登录页面（账号：123；密码：456）（不再可用）
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190127142958327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA2MzMyNjY=,size_16,color_FFFFFF,t_70)
 
