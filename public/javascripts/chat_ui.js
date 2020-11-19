@@ -147,7 +147,7 @@ $(document).ready(function () {
 	//初始化用户列表
 	chatApp.getUserList(function (data) {
 		//初始化用户信息
-		userName = data.nameMap[socket.id];
+		userName = data.nameMap[socket.id].slice(0,10);
 		$('.user-name-span').html(userName);
 
 		//初始化用户列表
